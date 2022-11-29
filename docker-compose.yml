@@ -2,7 +2,7 @@ version: "3"
 
 services:
     kopiya:
-        image: kopiya:latest
+        image: rodolfofigueroa/kopiya:latest
         container_name: kopiya
         depends_on:
             - redis
@@ -12,7 +12,7 @@ services:
             - ./config.toml:/usr/src/app/config.toml
 
     web:
-        image: kopiya-web:latest
+        image: rodolfofigueroa/kopiya-web:latest
         container_name: kopiya-web
         depends_on:
             - redis
