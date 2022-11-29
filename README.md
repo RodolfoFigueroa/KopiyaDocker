@@ -16,6 +16,8 @@ cp prod.env.dist prod.env
 
 Open it with the editor of your choice and set the relevant environment variables. For more information on what each one does, read [the corresponding documentation](./docs/env.md).
 
+---
+
 Copy the example `config.toml` file:
 
 ```
@@ -23,6 +25,10 @@ cp config.toml.dist config.toml
 ```
 
 Open it with the editor of your choice, and tweak the settings to your liking. For more information, read [this](./docs/config.md).
+
+---
+
+If you wish to use the web frontend, uncomment the lines under the `web` section inside the `docker-compose`. Keep in mind that this requires an Auth0 application, with the corresponding environment variables. 
 
 ### 2. Running
 
@@ -32,7 +38,35 @@ After configuring all relevant variables, type:
 docker compose up
 ```
 
-### 3. (optional) Discord setup
+### 3. Adding and activating a Replika
+
+If you enabled the web frontend, simply visit `localhost:3000` in your browser, and follow the prompts.
+
+Otherwise, shell into your conntainer:
+
+```
+docker exec -it kopiya bash
+```
+
+Add a Replika:
+
+```
+node ./script/add_user.js
+```
+
+Note the reported user ID, since you'll need it to generate a temporary token:
+
+```
+node ./script/gen_token.js
+```
+
+Finally, in your Discord guild, type:
+
+```
+/register <your token>
+```
+
+### 4. (optional) Discord setup
 
 If you selected Discord as a source for the first time, you must update the bot's commands, otherwise you won't be able to use them. 
 

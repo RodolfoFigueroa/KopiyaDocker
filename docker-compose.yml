@@ -4,6 +4,7 @@ services:
     kopiya:
         image: rodolfofigueroa/kopiya:latest
         container_name: kopiya
+        restart: unless-stopped
         depends_on:
             - redis
             - postgres
@@ -11,27 +12,35 @@ services:
         volumes:
             - ./config.toml:/usr/src/app/config.toml
 
-    web:
-        image: rodolfofigueroa/kopiya-web:latest
-        container_name: kopiya-web
-        depends_on:
-            - redis
-            - postgres
-        ports:
-            - 3000:3000
-        env_file: prod.env
-        volumes: 
-            - ./config.toml:/usr/src/app/config.toml
+    # web:
+    #     image: rodolfofigueroa/kopiya-web:latest
+    #     container_name: kopiya-web
+    #     restart: unless-stopped
+    #     depends_on:
+    #         - redis
+    #         - postgres
+    #     ports:
+    #         - 3000:3000
+    #     env_file: prod.env
+    #     volumes: 
+    #         - ./config.toml:/usr/src/app/config.toml
 
     redis:
         image: redis
         container_name: kopiya-redis
+        restart: unless-stopped
         expose:
             - 6379
 
     postgres:
         image: postgres
         container_name: kopiya-postgres
+        restart: unless-stopped
         expose:
             - 5432
+        volumes:
+            - postgres-data:/var/lib/postgresql/data/
         env_file: prod.env
+
+volumes:
+    postgres-data: 
