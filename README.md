@@ -114,4 +114,4 @@ Finally, if there are no errors, it should print:
 Successfully reloaded application commands.
 ```
 
-Now you can exit the shell and start using your Discord bot. However, if you did not set up a personal guild, it may take up to an hour for the changes to take effect. Do **not** run `deploy_commands` again, as this will only reset the timer.
+Now you can exit the shell and start using your Discord bot. However, if you did not set up a personal guild, it may take up to an hour for the changes to take effect. **Do not** run `deploy_commands` again, as this will only reset the timer.
