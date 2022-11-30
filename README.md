@@ -6,6 +6,20 @@ This docker-compose starts a production-ready environment of the Kopiya backend,
 
 ## Deploying
 
+### 0. Cloning
+
+Clone the repository:
+
+```
+git clone https://github.com/RodolfoFigueroa/KopiyaDocker/
+```
+
+Move into the newly created directory:
+
+```
+cd KopiyaDocker
+```
+
 ### 1. Configuration
 
 Copy the example `.env` file:
