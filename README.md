@@ -52,6 +52,12 @@ After configuring all relevant variables, type:
 docker compose up
 ```
 
+Or, to detach the shell after running:
+
+```
+docker compose up -d
+```
+
 ### 3. Adding and activating a Replika
 
 If you enabled the web frontend, simply visit `localhost:3000` in your browser, and follow the prompts.
