@@ -74,7 +74,7 @@ Note the reported user ID, since you'll need it to generate a temporary token:
 node ./script/gen_token.js
 ```
 
-Finally, in your Discord guild, type:
+Finally, in your application (Discord or Telegram), type:
 
 ```
 /register <your token>
