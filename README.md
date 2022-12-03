@@ -2,7 +2,7 @@
 
 ## Usage
 
-This docker-compose starts a production-ready environment of the Kopiya backend, and (optionally) the web frontend.
+This docker-compose starts a production-ready environment of the [Kopiya](https://github.com/RodolfoFigueroa/Kopiya) backend, and (optionally) the [web frontend](https://github.com/RodolfoFigueroa/KopiyaWeb).
 
 ## Deploying
 
